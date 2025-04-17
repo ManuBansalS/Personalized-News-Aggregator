@@ -1,4 +1,7 @@
-const backendUrl = "http://127.0.0.1:5000/news?q=";
+const backendUrl =
+    window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
+        ? "http://127.0.0.1:5000/news?q="
+        : "https://personalized-news-aggregator-2.onrender.com/"; 
 
 window.addEventListener("load", () => fetchNews("India"));
 
@@ -10,7 +13,11 @@ async function fetchNews(query) {
     try {
         const res = await fetch(`${backendUrl}${query}`);
         const data = await res.json();
-        bindData(data.articles);
+        if (data.articles) {
+            bindData(data.articles);
+        } else {
+            alert("No articles found.");
+        }
     } catch (error) {
         console.error("Error fetching news:", error);
         alert("Failed to load news articles. Please try again later.");
