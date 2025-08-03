@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='Favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href="static/Favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
     <nav>
         <div class="main-nav container flex">
             <a href="#" onclick="reload()" class="company-logo">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="company logo">
+                <img src="static/logo.png" alt="company logo">
             </a>
             <div class="nav-links">
                 <ul class="flex">
@@ -28,12 +28,9 @@
             </div>
         </div>
     </nav>
-    
 
     <main>
-        <div class="cards-container container flex" id="cards-container">
-            
-        </div>
+        <div class="cards-container container flex" id="cards-container"></div>
     </main>
 
     <template id="template-news-card">
@@ -44,11 +41,11 @@
             <div class="card-content">
                 <h3 id="news-title">This is the Title</h3>
                 <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
-                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
         </div>
     </template>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
