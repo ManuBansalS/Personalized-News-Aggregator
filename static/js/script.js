@@ -1,5 +1,3 @@
-const backendUrl = "http://127.0.0.1:5000/news?q=";
-
 window.addEventListener("load", () => fetchNews("India"));
 
 function reload() {
@@ -8,7 +6,7 @@ function reload() {
 
 async function fetchNews(query) {
     try {
-        const res = await fetch(`${backendUrl}${query}`);
+        const res = await fetch(`/news?q=${query}`);
         const data = await res.json();
         bindData(data.articles);
     } catch (error) {
