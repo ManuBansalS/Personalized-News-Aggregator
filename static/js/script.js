@@ -6,7 +6,8 @@ function reload() {
 
 async function fetchNews(query) {
     try {
-        const res = await fetch(`/news?q=${query}`);
+        const apiKey = "bccf553fb72a4370ad6117c590ea43c0";
+        const res = await fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`);
         const data = await res.json();
         bindData(data.articles);
     } catch (error) {
